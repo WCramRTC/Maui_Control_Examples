@@ -9,31 +9,43 @@
             Padding="30,0"
             VerticalOptions="Center">
 
-            <Image
-                Source="dotnet_bot.png"
-                SemanticProperties.Description="Cute dot net bot waving hi to you!"
-                HeightRequest="200"
-                HorizontalOptions="Center" />
+            <Entry Text="This is a text box" 
+                   AutomationProperties.HelpText="This is a entry box"
+                   />
 
-            <Label
-                Text="Hello, World!"
-                SemanticProperties.HeadingLevel="Level1"
-                FontSize="32"
-                HorizontalOptions="Center" />
+            <Label Text="This is a Label" 
+                   />
 
-            <Label
-                Text="Welcome to .NET Multi-platform App UI"
-                SemanticProperties.HeadingLevel="Level2"
-                SemanticProperties.Description="Welcome to dot net Multi platform App U I"
-                FontSize="18"
-                HorizontalOptions="Center" />
+            <Button Text="This is a button"
+                    x:Name="btnClicked"
+                    Clicked="btnClicked_Clicked"
+                    />
+            
+            <Editor Text="This is a Editor" 
+                    />
 
-            <Button
-                x:Name="CounterBtn"
-                Text="Click me"
-                SemanticProperties.Hint="Counts the number of times you click"
-                Clicked="OnCounterClicked"
-                HorizontalOptions="Center" />
+            <CheckBox 
+                IsChecked="True"
+                />
+
+            <StackLayout>
+                <RadioButton Content="Option 1"
+                 IsChecked="true" 
+                             />
+                <RadioButton Content="Option 2"
+                             />
+            </StackLayout>
+
+            <ListView
+                x:Name="lvItems" />
+
+            <Picker Title="Select an option"
+                SelectedIndex="0"
+                TitleColor="Gray" 
+                x:Name="pikNames"
+                    />
+
+
 
         </VerticalStackLayout>
     </ScrollView>

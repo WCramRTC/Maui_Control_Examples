@@ -2,23 +2,33 @@
 {
     public partial class MainPage : ContentPage
     {
-        int count = 0;
+        List<Player> names = new List<Player>();
 
         public MainPage()
         {
             InitializeComponent();
+            Preload();
+            lvItems.ItemsSource = names;
+            pikNames.ItemsSource = names;
+        } // MainPage()
+
+        public void Preload()
+        {
+            names.AddRange(new Player[] { 
+            new Player("Will", 40),
+            new Player("Hannah", 25),
+            new Player("Kristyn", 25),
+            new Player("Dylan", 25),
+            new Player("Josh", 40),
+            });
         }
 
-        private void OnCounterClicked(object sender, EventArgs e)
+        private void btnClicked_Clicked(object sender, EventArgs e)
         {
-            count++;
+            names.Add(new Player("Desmond", 24));
 
-            if (count == 1)
-                CounterBtn.Text = $"Clicked {count} time";
-            else
-                CounterBtn.Text = $"Clicked {count} times";
-
-            SemanticScreenReader.Announce(CounterBtn.Text);
+            lvItems.ItemsSource = null;
+            lvItems.ItemsSource = names;
         }
     }
 }
